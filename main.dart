@@ -1,8 +1,7 @@
 // ignore_for_file: prefer_const_constructors, duplicate_ignore
 
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const Zizo());
@@ -33,43 +32,171 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: const Text(""),
       ),
-      body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              // ignore: prefer_const_literals_to_create_immutables
+      body: Padding(
+        padding: EdgeInsets.all(10),
+        child: Card(
+          color: Colors.grey,
+          elevation: 20,
+          clipBehavior: Clip.antiAlias,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+          child: SafeArea(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // ignore: prefer_const_constructors
                 CircleAvatar(
-                  backgroundImage: AssetImage("images/h.jpg"),
-                  radius: 150,
+                  backgroundImage: AssetImage("images/hhh.jpg"),
+                  radius: 100,
                 ),
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              // ignore: prefer_const_literals_to_create_immutables
-              children: [
-                const Text(
-                  "Ziad Abbas",
+                const SizedBox(
+                  width: 2,
+                ),
+                Text(
+                  "ziad abbas",
                   style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.cyan,
+                    fontSize: 50,
+                    color: Colors.blueGrey,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                const Text("Flutter Developer",
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.cyanAccent)),
+                const SizedBox(
+                  width: 2,
+                ),
+                Text(
+                  "Flutter developer",
+                  style: TextStyle(
+                    fontSize: 40,
+                    color: Colors.blueGrey,
+                    fontFamily: "Schyler",
+                  ),
+                ),
+                InkWell(
+                  child: Container(
+                    height: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(100),
+                        bottomRight: Radius.circular(10),
+                      ),
+                      gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          // ignore: prefer_const_literals_to_create_immutables
+                          colors: [
+                            Colors.grey,
+                            Colors.white,
+                          ]),
+                      // ignore: prefer_const_literals_to_create_immutables
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black,
+                          blurRadius: 10,
+                          offset: Offset(5, 5),
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Sent Email",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Schyler",
+                        ),
+                      ),
+                    ),
+                  ),
+                  onTap: () {
+                    launch("mailto:zizoabbas567@gmail.com");
+                  },
+                ),
+                InkWell(
+                  child: Container(
+                    height: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(100),
+                        bottomRight: Radius.circular(10),
+                      ),
+                      gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          // ignore: prefer_const_literals_to_create_immutables
+                          colors: [
+                            Colors.grey,
+                            Colors.white,
+                          ]),
+                      // ignore: prefer_const_literals_to_create_immutables
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black,
+                          blurRadius: 10,
+                          offset: Offset(5, 5),
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Call ziad",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Schyler",
+                        ),
+                      ),
+                    ),
+                  ),
+                  onTap: () {
+                    launch("tel:01155224266");
+                  },
+                ),
+                InkWell(
+                  child: Container(
+                    height: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(100),
+                        bottomRight: Radius.circular(10),
+                      ),
+                      gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          // ignore: prefer_const_literals_to_create_immutables
+                          colors: [
+                            Colors.grey,
+                            Colors.white,
+                          ]),
+                      // ignore: prefer_const_literals_to_create_immutables
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black,
+                          blurRadius: 10,
+                          offset: Offset(5, 5),
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: Text(
+                        "open page",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Schyler",
+                        ),
+                      ),
+                    ),
+                  ),
+                  onTap: () {
+                    launch("https://www.youtube.com/watch?v=SXMrLmlzpQI");
+                  },
+                ),
               ],
             ),
-          ],
+          ),
         ),
       ),
     );
