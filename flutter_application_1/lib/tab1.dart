@@ -103,7 +103,13 @@ class _taboneState extends State<Tabone> {
                       });
                     },
                   ),
-                  title: Text("task3"),
+                  title: Text(
+                    "task3",
+                    style: TextStyle(
+                        decoration: checkbox3 == true
+                            ? TextDecoration.lineThrough
+                            : null),
+                  ),
                 ),
               ],
             ),
