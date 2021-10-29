@@ -1,0 +1,34 @@
+import 'package:flutter/material.dart';
+
+
+class Additems extends StatefulWidget {
+  const Additems({Key? key}) : super(key: key);
+
+  @override
+  _AdditemsState createState() => _AdditemsState();
+}
+
+class _AdditemsState extends State<Additems> {
+  @override
+  Widget build(BuildContext context) {
+    TextEditingController teamnamecontroller = TextEditingController();
+    return Scaffold(
+      appBar: AppBar(),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            TextField(
+              controller: teamnamecontroller,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pop(teamnamecontroller.text);
+                },
+                child: Text("data"))
+          ],
+        ),
+      ),
+    );
+  }
+}
