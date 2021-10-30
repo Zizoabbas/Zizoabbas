@@ -35,8 +35,8 @@ class _TabTwoState extends State<TabTwo> {
                   trailing: Text(
                       DateFormat("dd/MM hh:mm").format(team[index].endtime!)),
                   subtitle: Text(team[index]
-                      .starttime!
-                      .difference(team2[index].endtime!)
+                      .endtime!
+                      .difference(team2[index].starttime!)
                       .toString()),
                 ),
               );
