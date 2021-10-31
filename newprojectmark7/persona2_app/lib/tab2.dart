@@ -33,10 +33,10 @@ class _TabTwoState extends State<TabTwo> {
                 child: ListTile(
                   title: Text(team2[index].name),
                   trailing: Text(
-                      DateFormat("dd/MM hh:mm").format(team[index].endtime!)),
-                  subtitle: Text(team[index]
+                      DateFormat("dd/MM hh:mm").format(team2[index].endtime!)),
+                  subtitle: Text(team2[index]
                       .endtime!
-                      .difference(team2[index].starttime!)
+                      .difference(team[index].starttime!)
                       .toString()),
                 ),
               );
