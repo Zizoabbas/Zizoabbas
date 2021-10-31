@@ -6,6 +6,7 @@ import 'package:flutter_application_1/players.dart';
 import 'package:flutter_application_1/team.dart';
 import 'package:flutter_application_1/team2.dart';
 import 'package:flutter_application_1/team3.dart';
+import 'package:intl/intl.dart';
 
 class TabThree extends StatefulWidget {
   TabThree({Key? key}) : super(key: key);
@@ -31,6 +32,8 @@ class _TabTwoState extends State<TabThree> {
                 padding: const EdgeInsets.all(8.0),
                 child: ListTile(
                   title: Text(team3[index].name),
+                  subtitle: Text(DateFormat("dd/MM hh:mm")
+                      .format(team3[index].starttime!)),
                 ),
               );
             },

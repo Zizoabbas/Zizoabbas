@@ -28,6 +28,39 @@ class _TabOneState extends State<TabOne> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(children: [
+          SizedBox(
+            height: 30,
+          ),
+          ElevatedButton(
+              onPressed: () {
+                showModalBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return Container(
+                        child: Column(
+                          children: [
+                            TextField(controller: control1),
+                            TextField(controller: control2),
+                            ElevatedButton(
+                                onPressed: () {
+                                  var text = control1;
+                                  var text2 = control2;
+                                  setState(() {
+                                    team.add(players(
+                                      name: text.text,
+                                      age: text2.text,
+                                      starttime: DateTime.now(),
+                                    ));
+                                    Navigator.pop(context);
+                                  });
+                                },
+                                child: Text("add"))
+                          ],
+                        ),
+                      );
+                    });
+              },
+              child: Text("add")),
           ListView.builder(
             physics: ScrollPhysics(
                 parent: null), // to be able to scroll between list items
@@ -63,36 +96,6 @@ class _TabOneState extends State<TabOne> {
             },
             itemCount: team.length,
           ),
-          ElevatedButton(
-              onPressed: () {
-                showModalBottomSheet(
-                    context: context,
-                    builder: (context) {
-                      return Container(
-                        child: Column(
-                          children: [
-                            TextField(controller: control1),
-                            TextField(controller: control2),
-                            ElevatedButton(
-                                onPressed: () {
-                                  var text = control1;
-                                  var text2 = control2;
-                                  setState(() {
-                                    team.add(players(
-                                      name: text.text,
-                                      age: text2.text,
-                                      starttime: DateTime.now(),
-                                    ));
-                                    Navigator.pop(context);
-                                  });
-                                },
-                                child: Text("add"))
-                          ],
-                        ),
-                      );
-                    });
-              },
-              child: Text("add")),
         ]),
       ),
     );
