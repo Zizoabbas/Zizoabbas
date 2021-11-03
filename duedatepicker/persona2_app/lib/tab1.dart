@@ -1,14 +1,8 @@
-// ignore_for_file: prefer_equal_for_default_values
-
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_application_1/players.dart';
 import 'package:flutter_application_1/team.dart';
-import 'package:flutter_application_1/Additems';
-
-import 'package:intl/date_symbol_data_custom.dart';
 import 'package:intl/intl.dart';
 
 class TabOne extends StatefulWidget {
@@ -63,8 +57,6 @@ class _TabOneState extends State<TabOne> {
   @override
   Widget build(BuildContext context) {
     TextEditingController control1 = TextEditingController();
-    TextEditingController control2 = TextEditingController();
-    TextEditingController control3 = TextEditingController();
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -85,7 +77,6 @@ class _TabOneState extends State<TabOne> {
                           child: Column(
                             children: [
                               TextField(controller: control1),
-                              TextField(controller: control2),
                               Card(
                                 child: ListTile(
                                   leading: Icon(Icons.ac_unit),
@@ -118,7 +109,7 @@ class _TabOneState extends State<TabOne> {
                                       team.add(players(
                                         name: text.text,
                                         dudate:
-                                            ("${currentTime.format(context).toString()},${currentdate.day}/${currentdate.month}/${currentdate.year}"),
+                                            ("duedate:${currentTime.format(context).toString()},${currentdate.day}/${currentdate.month}/${currentdate.year}"),
                                         starttime: DateTime.now(),
                                       ));
                                       Navigator.pop(context);
@@ -172,42 +163,3 @@ class _TabOneState extends State<TabOne> {
     );
   }
 }
-
-// Future<void> _selecttime(BuildContext context) async {
-//   TimeOfDay currentTime = TimeOfDay.now();
-//   // bool isselectedT = false;
-//   final TimeOfDay? picktime = await showTimePicker(
-//     context: context,
-//     initialTime: currentTime,
-//     initialEntryMode: TimePickerEntryMode.dial,
-//     helpText: "pick time",
-//     confirmText: "done",
-//     cancelText: "later",
-//   );
-//   if (picktime != null && picktime != currentTime) {
-//     setstate() {
-//       currentTime = picktime;
-//       isselectedT = true;
-//     }
-//   }
-// }
-
-// Future<void> _selectdate(BuildContext context) async {
-//   DateTime currentdate = DateTime.now();
-//   // bool isselectedd = false;
-//   final DateTime? pickdate = await showDatePicker(
-//     context: context,
-//     initialDate: currentdate,
-//     firstDate: DateTime(2021, 1, 1),
-//     lastDate: DateTime(2030, 1, 1),
-//     helpText: "pick time",
-//     confirmText: "done",
-//     cancelText: "later",
-//   );
-//   if (pickdate != null && pickdate != currentdate) {
-//     setstate() {
-//       currentdate = pickdate;
-//       isselectedd = true;
-//     }
-//   }
-// }
