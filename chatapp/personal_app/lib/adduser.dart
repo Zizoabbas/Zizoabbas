@@ -169,7 +169,7 @@ class Adduser extends StatelessWidget {
                 Divider(height: 20),
                 ElevatedButton(
                     onPressed: () {
-                      if (text1 == null && text2 == null) {
+                      if (text1 == null && text2 == null && urlz == null) {
                         return;
                       } else {
                         createuser.doc('$user').set({
